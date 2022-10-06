@@ -32,6 +32,14 @@ const app = new Vue({
                 this.basketProducts.push(basketItem);
             }
         },
+        outProduct(product) {
+            const find = this.basketProducts.find(products => product.id_product == products.id_product);
+            if (find.quantity>1) {
+                find.quantity--;
+            } else {
+                this.basketProducts.splice(find, 1);
+            }
+        }
     },
     mounted(){
        this.getJson(`${API + this.catalogUrl}`)
@@ -49,7 +57,7 @@ const app = new Vue({
                 }
             });
     }
-})
+});
 
 // class List {
 //     constructor(url, container, list = list2){

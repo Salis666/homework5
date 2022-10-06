@@ -18,7 +18,17 @@
                 </button>
             </form>
             <button class="btn-cart" type="button" @click="show=!show">Корзина</button>
-            <div class="cart-block" v-show="show"></div>
+            <div class="cart-block" v-show="show">
+                <div v-for="product of basketProducts">
+                    <img :src="imgCatalog" alt="Some img">
+                <div class="desc">
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}} $</p>
+                    <p> Добавлено {{product.quantity}} шт.</p>
+                    <p>Общая стоимость {{product.price * product.quantity}}</p>
+                    <!--<button class="buy-btn" @click="addProduct(product)">Купить</button>-->
+                </div>
+            </div>
         </div>
     </header>
     <main>

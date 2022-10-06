@@ -8,7 +8,8 @@ const app = new Vue({
         filtered: [],
         imgCatalog: 'https://via.placeholder.com/200x150',
         userSearch: '',
-        show: false
+        show: false,
+        basketProducts: []
     },
     methods: {
         filter(){
@@ -23,8 +24,14 @@ const app = new Vue({
                 })
         },
         addProduct(product){
-                console.log(product.id_product);
-        }
+            const find = this.basketProducts.find(products => product.id_product == products.id_product);
+            if (find) {
+                find.quantity++;
+            } else {
+                const basketItem = Object.assign({quantity: 1}, product);
+                this.basketProducts.push(basketItem);
+            }
+        },
     },
     mounted(){
        this.getJson(`${API + this.catalogUrl}`)

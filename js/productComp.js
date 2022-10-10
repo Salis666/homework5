@@ -3,7 +3,6 @@ Vue.component ('catalog', {
 	template: `
 	<div class="products">
         <catalogItem v-for="product of products"
-        :key="product.id_product" 
         :product="product"
         :img="img">
         </catalogItem>
@@ -19,7 +18,7 @@ Vue.component ('catalogItem', {
                 <div class="desc">
                     <h3>{{product.product_name}}</h3>
                     <p>{{product.price}} $</p>
-                    <button class="buy-btn" @click="addProduct(product)">Купить</button>
+                    <button class="buy-btn" @click="$parent.$emit('add-product', product)">Купить</button>
                 </div>
-            </div>`,
+            </div>`
 });

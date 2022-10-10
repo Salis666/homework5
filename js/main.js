@@ -4,14 +4,13 @@ const app = new Vue({
     el: '#app',
     data: {
         catalogUrl: '/catalogData.json',
-        cartUrl: '/getBasket.json',
         products: [],
         filtered: [],
         imgCatalog: 'https://via.placeholder.com/200x150',
         userSearch: '',
         show: false,
         basketProducts: [],
-        imgCart: 'https://via.placeholder.com/50x100',
+        imgCart: 'https://via.placeholder.com/250x150',
         imgProduct: 'https://via.placeholder.com/200x150'
     },
     methods: {

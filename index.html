@@ -11,15 +11,10 @@
     <header>
         <div class="logo">E-shop</div>
         <div class="cart">
-            <form action="#" class="search-form" @submit.prevent="filter">
-                <input type="text" class="search-field" v-model="userSearch">
-                <button class="btn-search" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
+            <product-filter></product-filter>
             <button class="btn-cart" type="button" @click="show=!show">Корзина</button>
             <div v-show="show">
-                <cart :basketProducts="basketProducts" :img="imgCart"></cart>
+                <cart :basket-products="basketProducts" :img="imgCart" @out-product="outProduct"></cart>
             </div>
         </div>
     </header>
@@ -31,6 +26,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src = "js/productComp.js"></script>
     <script src = "js/cartComp.js"></script>
+    <script src = "js/productFilterComp.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

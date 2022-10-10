@@ -11,8 +11,8 @@ const app = new Vue({
         userSearch: '',
         show: false,
         basketProducts: [],
-        imgCart: 'https://placehold.it/50x100',
-        imgProduct: 'https://placehold.it/200x150'
+        imgCart: 'https://via.placeholder.com/50x100',
+        imgProduct: 'https://via.placeholder.com/200x150'
     },
     methods: {
         filter(){
